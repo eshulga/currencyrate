@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import Header from '../Header';
-import Dashboard from '../Dashboard';
+import React, { Component } from 'react'
+import Header from '../Header'
+import Dashboard from '../Dashboard'
 
 class App extends Component {
   render() {
-    const { classes } = this.props;
+    const { classes } = this.props
     return (
       <div className={classes.app}>
         <Header>Currency</Header>
@@ -12,8 +12,8 @@ class App extends Component {
           <Dashboard />
         </main>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

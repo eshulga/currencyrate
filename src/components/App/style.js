@@ -10,6 +10,6 @@ const style = theme => ({
     margin: '0 auto',
     padding: `0 ${theme.spacing.unit * 2}`
   }
-});
+})
 
-export default style;
+export default style
