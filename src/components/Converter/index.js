@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 import { withStyles } from '@material-ui/core'
 import Converter from './Converter'
 
-import { setCurrency } from '../../actions'
+import { setCurrency, setBaseAmount, getRates } from '../../actions'
 
 import style from './style'
 
@@ -11,7 +11,9 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = {
-  setCurrency
+  setCurrency,
+  setBaseAmount,
+  getRates
 }
 
 export default connect(

@@ -8,7 +8,7 @@ const style = theme => ({
     height: '100%',
     maxWidth: '1024px',
     margin: '0 auto',
-    padding: `0 ${theme.spacing.unit * 2}`
+    padding: `0 ${theme.spacing.unit * 3}px`
   }
 })
 
