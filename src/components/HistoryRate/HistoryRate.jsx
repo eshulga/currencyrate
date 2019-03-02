@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { ResponsiveContainer } from 'recharts'
+
 import Grid from '@material-ui/core/Grid'
 import Select from '@material-ui/core/Select'
-
-import { ResponsiveContainer } from 'recharts'
 
 import { round } from '../../utils'
 
@@ -99,6 +100,7 @@ class HistoryRate extends Component {
             {!!historyRate && (
               <ResponsiveContainer>
                 <MinLineChart
+                  responsive
                   data={this.prepareData()}
                   XAxisInterval={this.setInterval(chosenPeriod)}
                   dataKey={to}
@@ -110,6 +112,23 @@ class HistoryRate extends Component {
       </div>
     )
   }
+}
+
+HistoryRate.propTypes = {
+  getHistoryRate: PropTypes.func,
+  setPeriod: PropTypes.func,
+  currencies: PropTypes.shape({
+    list: PropTypes.array,
+    selected: PropTypes.shape({
+      from: PropTypes.string,
+      to: PropTypes.string,
+      amount: PropTypes.number
+    }),
+    rates: PropTypes.object,
+    historyRate: PropTypes.object,
+    period: PropTypes.array,
+    chosenPeriod: PropTypes.number
+  })
 }
 
 export default HistoryRate

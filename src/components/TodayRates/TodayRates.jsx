@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+
 import Typography from '@material-ui/core/Typography'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
@@ -54,6 +56,22 @@ class TodayRates extends Component {
       </React.Fragment>
     )
   }
+}
+
+TodayRates.propTypes = {
+  classes: PropTypes.object,
+  currencies: PropTypes.shape({
+    list: PropTypes.array,
+    selected: PropTypes.shape({
+      from: PropTypes.string,
+      to: PropTypes.string,
+      amount: PropTypes.number
+    }),
+    rates: PropTypes.object,
+    historyRate: PropTypes.object,
+    period: PropTypes.array,
+    chosenPeriod: PropTypes.number
+  })
 }
 
 export default TodayRates

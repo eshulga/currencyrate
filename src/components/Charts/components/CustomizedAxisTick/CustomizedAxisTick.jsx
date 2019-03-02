@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 class CustomizedAxisTick extends Component {
   render() {
@@ -20,6 +21,12 @@ class CustomizedAxisTick extends Component {
       </g>
     )
   }
+}
+
+CustomizedAxisTick.propTypes = {
+  x: PropTypes.number,
+  y: PropTypes.number,
+  payload: PropTypes.object
 }
 
 export default CustomizedAxisTick

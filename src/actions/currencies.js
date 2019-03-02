@@ -16,8 +16,7 @@ export const setCurrency = payload => dispatch => {
     payload
   })
 
-  const debounceGetRace = false
-  dispatch(getRates(debounceGetRace))
+  dispatch(getRates())
 }
 
 export const setBaseAmount = payload => ({
@@ -55,7 +54,6 @@ export const getHistoryRate = () => (dispatch, getStore) => {
   getHistory(from, [to], periodStart.toISODate(), periodEnd.toISODate())
     .then(response => {
       if (response.status === 200) {
-        console.log(response)
         dispatch(setHistory(response.data.rates))
       }
     })
@@ -64,38 +62,27 @@ export const getHistoryRate = () => (dispatch, getStore) => {
     })
 }
 
-export const getRates = (debounced = true) => {
-  const thunk = (dispatch, getStore) => {
-    const {
-      currencies: {
-        list,
-        selected: { from }
-      }
-    } = getStore()
-
-    const preparedList = [...list]
-    preparedList.splice(preparedList.indexOf(from), 1)
-
-    getLatest(from, preparedList)
-      .then(response => {
-        if (response.status === 200) {
-          dispatch({
-            type: SET_RATES,
-            payload: response.data.rates
-          })
-        }
-      })
-      .catch(err => {
-        console.log(err)
-      })
-  }
-
-  thunk.meta = {
-    debounce: {
-      time: debounced ? 500 : 0,
-      key: 'GET_CURRENCY_RATE'
+export const getRates = () => (dispatch, getStore) => {
+  const {
+    currencies: {
+      list,
+      selected: { from }
     }
-  }
+  } = getStore()
 
-  return thunk
+  const preparedList = [...list]
+  preparedList.splice(preparedList.indexOf(from), 1)
+
+  getLatest(from, preparedList)
+    .then(response => {
+      if (response.status === 200) {
+        dispatch({
+          type: SET_RATES,
+          payload: response.data.rates
+        })
+      }
+    })
+    .catch(err => {
+      console.log(err)
+    })
 }

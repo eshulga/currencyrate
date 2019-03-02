@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
@@ -48,6 +49,10 @@ class CustomizedTabs extends React.Component {
       </div>
     )
   }
+}
+
+CustomizedTabs.propTypes = {
+  classes: PropTypes.object
 }
 
 export default CustomizedTabs

@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+
 import Select from '@material-ui/core/Select'
 import OutlinedInput from '@material-ui/core/OutlinedInput'
 import MenuItem from '@material-ui/core/MenuItem'
@@ -32,7 +34,7 @@ class Converter extends Component {
     const { setBaseAmount } = this.props
 
     setBaseAmount({
-      value
+      value: parseFloat(value)
     })
   }
 
@@ -137,6 +139,25 @@ class Converter extends Component {
       </div>
     )
   }
+}
+
+Converter.propTypes = {
+  classes: PropTypes.object,
+  currencies: PropTypes.shape({
+    list: PropTypes.array,
+    selected: PropTypes.shape({
+      from: PropTypes.string,
+      to: PropTypes.string,
+      amount: PropTypes.number
+    }),
+    rates: PropTypes.object,
+    historyRate: PropTypes.object,
+    period: PropTypes.array,
+    chosenPeriod: PropTypes.number
+  }),
+  setCurrency: PropTypes.func,
+  setBaseAmount: PropTypes.func,
+  getRates: PropTypes.func
 }
 
 export default Converter

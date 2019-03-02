@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
 import { DateTime } from 'luxon'
@@ -56,6 +57,16 @@ class Dashboard extends Component {
       </div>
     )
   }
+}
+
+Dashboard.propTypes = {
+  classes: PropTypes.object,
+  selected: PropTypes.shape({
+    from: PropTypes.string,
+    to: PropTypes.string,
+    amount: PropTypes.number
+  }),
+  rates: PropTypes.object
 }
 
 export default Dashboard

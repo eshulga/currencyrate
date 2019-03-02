@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import { LineChart, Line, XAxis, YAxis, Tooltip, Legend } from 'recharts'
 import CustomizedAxisTick from './components/CustomizedAxisTick'
@@ -36,6 +37,12 @@ const MinLineChart = props => {
       />
     </LineChart>
   )
+}
+
+MinLineChart.propTypes = {
+  data: PropTypes.array,
+  XAxistInterval: PropTypes.number,
+  dataKey: PropTypes.string
 }
 
 export default MinLineChart
