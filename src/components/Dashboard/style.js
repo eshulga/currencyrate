@@ -13,6 +13,9 @@ const style = theme => ({
   leftItemPaper: {
     padding: theme.spacing.unit * 2,
     width: '100%'
+  },
+  formControl: {
+    margin: `${theme.spacing.unit}px 0`
   }
 })
 

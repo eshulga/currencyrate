@@ -1,4 +1,11 @@
+<h2>https://currencies.eshulga.pro</h2>
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Other used libraries
+
+
 
 ## Available Scripts
 

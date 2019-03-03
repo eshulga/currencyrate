@@ -58,9 +58,9 @@ class Converter extends Component {
     return (
       <div className={classes.root}>
         <Grid container>
-          <Grid item xs={8}>
+          <Grid item xs={12} md={8}>
             <Grid container spacing={16}>
-              <Grid item xs={4}>
+              <Grid item xs={6}>
                 <TextField
                   id="outlined-number"
                   label="From"
@@ -78,7 +78,7 @@ class Converter extends Component {
                   variant="outlined"
                 />
               </Grid>
-              <Grid item xs={8}>
+              <Grid item xs={6}>
                 <FormControl variant="outlined" className={classes.formControl}>
                   <Select
                     value={selected.from}
@@ -98,7 +98,7 @@ class Converter extends Component {
               </Grid>
             </Grid>
             <Grid container spacing={16}>
-              <Grid item xs={4}>
+              <Grid item xs={6}>
                 <TextField
                   disabled
                   id="outlined-number"
@@ -113,7 +113,7 @@ class Converter extends Component {
                   variant="outlined"
                 />
               </Grid>
-              <Grid item xs={8}>
+              <Grid item xs={6}>
                 <FormControl variant="outlined" className={classes.formControl}>
                   <Select
                     value={selected.to}

@@ -6,8 +6,8 @@ const style = theme => ({
     width: '100%'
   },
   formControl: {
-    margin: theme.spacing.unit,
-    minWidth: 120
+    margin: `${theme.spacing.unit}px 0`,
+    minWidth: 100
   },
   textField: {
     marginTop: theme.spacing.unit,
