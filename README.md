@@ -1,11 +1,21 @@
-<h2>https://currencies.eshulga.pro</h2>
-
+# https://currencies.eshulga.pro
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Other used libraries
+## Other libraries
 
+"@material-ui/core"
 
+"axios"
+"husky"
+"lint-staged"
+"luxon"
+"prettier"
+"prop-types"
+"recharts"
+"redux"
+"redux-devtools-extension"
+"redux-thunk"
 
 ## Available Scripts
 
